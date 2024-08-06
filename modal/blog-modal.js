@@ -1,25 +1,26 @@
 import mongoose from "mongoose";
 
-const userSchema = new mongoose.Schema(
+const blogSchema = new mongoose.Schema(
     {
-        email: {
+        cat_id: {
             type: String,
             required: true,
-            unique: true
         },
         name: {
             type: String,
             required: true,
+            unique: true
         },
-        password: {
+        author_name: {
             type: String,
-            required: true
+            required: true,
         },
-        user_photo: {
+        blog_details: {
             type: String,
+            required: true,
         }
     }
 )
 
-const User = mongoose.model('user', userSchema)
-export default User;
+const Blogs = mongoose.model('blog', blogSchema)
+export default Blogs;
